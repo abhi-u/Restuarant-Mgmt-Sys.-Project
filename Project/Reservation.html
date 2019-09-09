@@ -1,0 +1,191 @@
+
+<!Doctype html>
+<html>
+<head>
+    <title>Reservation</title>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+ul {
+    position:fix;
+  list-style-type: none;
+  width: 62%;
+  margin-left: 20%;   
+  padding: 0;
+  overflow: hidden;
+  background-color: whitesmoke;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color:brown;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+
+li a:hover:not(.active) {
+  background-color: grey;
+  border-bottom: 3px solid black;
+}
+
+.mySlides {
+    margin: 50px auto; 
+    position: relative; 
+    width: 87.5%; 
+    height: 60%; 
+    padding: 0px; 
+    margin-left: 270px;
+    
+    }
+
+.slider {
+    position:absolute;
+    width: 70%;
+    height: 80%;
+    top:6%;
+}
+h1{
+  color:brown;
+  position: absolute;
+  top: 60%;
+  margin-left: 20%;
+}
+  .table1{
+    position:absolute;
+    top:75%;
+    margin-left: 30%;
+    color: brown;
+  }
+#book:hover{
+  background-color: grey;
+  border-bottom: 3px solid black;
+}
+td{
+  padding: 10px;  
+}
+</style>
+ 
+<body style="background-color:white;">
+  
+<ul>
+  <li><a href="Home.html">Home</a></li>
+  <li><a href="Menu.html">Menu</a></li>
+  <li><a href="Reservation.html">Reservation</a></li>
+  <li><a href="Gallery.html">Gallery</a></li>
+  <li style="float:right"><a href="Admin.html">Admin</a></li>
+</ul>
+
+<div class="slider">
+    <img class="mySlides" src="https://www.nbistro.lu/wp-content/uploads/2018/05/DSC06591.jpg">
+    <img class="mySlides" src="http://candkbbq.com/wp-content/uploads/2017/06/bkgd_1920x1080_FoodPlatesSTL.png">
+    <img class="mySlides" src="https://www.sanssouci-wien.com/wp-content/uploads/2018/07/veranda-sans-souci-sujet1-credits-stefan-gergely-1920x1080.jpg">
+</div>
+  
+<script>
+  var myIndex = 0;
+  carousel();
+  
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 4000); // Change image every 4 seconds
+  }
+function validate()
+{
+    	var emailID = document.myForm.email1.value;
+        atpos = emailID.indexOf("@");
+        dotpos = emailID.lastIndexOf(".");
+        
+        
+    
+       if( document.myForm.date1.value == "" ) {
+          alert( "Please provide your date!" );
+          document.myForm.date1.focus() ;
+          return false;
+       }
+       else if( document.myForm.guests.value == "" || isNaN( document.myForm.guests.value )) {
+          alert( "Please provide guests number!" );
+          document.myForm.guests.focus() ;
+          return false;
+       }
+       else if( document.myForm.time.value == "" ) {
+          
+          alert( "Please provide the time!" );
+          document.myForm.time.focus() ;
+          return false;
+       }
+       else if( document.myForm.first.value =="" ) {
+          alert( "Please provide your First Name!" );
+          document.myForm.first.focus() ;
+          return false;
+       }
+       else if( document.myForm.last.value =="" ) {
+           alert( "Please provide your Last Name!" );
+           document.myForm.last.focus() ;
+           return false; 
+        }
+       else if (atpos < 1 || ( dotpos - atpos < 2 )) {
+           alert("Please enter correct email ID!")
+           document.myForm.email1.focus() ;
+           return false;
+       }
+        else if( (document.myForm.phone1.value =="") || isNaN( document.myForm.phone1.value ) || (document.myForm.phone1.value.length!=10)) {
+             alert( "Please provide your Phone Number!" );
+             document.myForm.phone1.focus() ;
+             return false;
+           }  
+       return( true );
+    }
+
+
+
+</script>
+  <h1><i>Please select your booking details!&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<hr></i></h1>
+  <form action="Reservation_Result.jsp" name="myForm" method="POST">
+  <table  class="table1">
+   <tr>
+
+    <tr>
+      <td>SELECT DATE &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td><td><input type="date" name="date1"></td>
+    </tr>
+    
+    <tr>
+      <td>NUMBER OF GUESTS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td><td><input type="number" min="1" max="10" name="guests" style="width:141px; " required></td>
+    </tr>
+    <tr>
+      <td>TIME &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td><td><input type="time" name="time" style="width:141px;" required></td>
+    </tr>
+    <tr>
+      <td>FIRST NAME &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td><td><input type="text" name="first" style="width:141px;" required></td>
+    </tr>
+    <tr>
+     <td>LAST NAME &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td><td><input type="text" name="last" style="width:141px;" required></td>
+    </tr>
+    <tr>
+      <td>EMAIL ID &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td><td><input type="email" name="email1" style="width:141px;"required></td>
+    </tr>
+    <tr>
+      <td>PHONE NO. &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td><td><input type="text"style="width:141px;"required id="phone" name="phone1"></td>
+    </tr>
+    <tr>
+      <td style="padding:30px;"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td><td><button type="submit"  value="BOOK" onclick=" return validate()" id="book" style="width:141px; border: none ">BOOK</button></td>
+    </tr>
+    <tr style="padding:30px;">
+    </tr>
+  </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!Doctype html>
+<html>
+<head>
+    <title>Admin</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+
+<style>
+h1 {
+  text-align: center;
+  font-size: 50px;
+  color: brown;;
+}
+
+.mySlides {
+    margin: 50px auto; 
+    position: relative; 
+    width: 60%; 
+    height: 60%; 
+    padding: 10px; 
+    }
+
+.slider {
+    position:absolute;
+    width: 2100px;
+    height: 80%;
+    top:9%;
+    left: 21.3%;
+}
+
+.w3-tangerine {
+  font-family: "Tangerine", serif;
+}
+
+.p1 {
+    position: absolute;
+    font-family:cursive;
+    color:brown;
+    left:22%;
+    top:65%;
+    font-size: 20px;
+}
+
+.form1 {
+    position: absolute;
+    font-family:cursive;
+    color:brown;
+    left:22%;
+    top:75%;
+    font-size: 15px;
+}
+</style>
+ </head>
+<body>
+<h1 class="w3-container w3-tangerine"><b>Welcome Admin</b></h1>
+
+<div class="slider" style="max-width:800px; ">
+    <img class="mySlides" src="https://images.wallpaperscraft.com/image/restaurant_cafe_design_style_tables_chairs_39235_300x168.jpg" style="width:100%">
+    <img class="mySlides" src="https://images.wallpaperscraft.com/image/cafe_restaurant_table_interior_design_110567_300x188.jpg" style="width:100%">
+    <img class="mySlides" src="https://images.wallpaperscraft.com/image/desk_restaurant_wine_glasses_plates_flowers_roses_80713_300x188.jpg" style="width:100%">
+    <img class="mySlides" src="https://images.wallpaperscraft.com/image/restaurant_table_appliances_chairs_interior_39211_300x168.jpg" style="width:100%">
+</div>
+
+<script>
+ var slideIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none"; 
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1} 
+  x[slideIndex-1].style.display = "block"; 
+  setTimeout(carousel, 4000);
+}
+
+function validate()
+{
+    var x=document.form1.fname.value;
+    var y=document.form1.pasw.value;
+    if(x=="saurav" && y=="1234")
+    {
+        alert("Login Successful");
+        return true;
+    }
+    else
+    {
+        alert("Login Failed Enter Correct username or password");
+        return false;
+    }   
+}
+</script>
+
+<p class="p1"><b>Admin Login:</b></p>
+<div class="container">
+    <form class="form1" name="form1">
+        First name:&nbsp&nbsp&nbsp&nbsp<input type="text" placeholder="Enter UserName" name="fname" required id="fname">
+        <br><br>
+        Password:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="password" placeholder="Enter Password" name="pasw" required id="pasw">
+        <br><br>
+        <button type="submit" onclick="return validate()" formaction="AdminHome.html" >Login</button>
+    </form>
+</div>
+</body>
+</html>

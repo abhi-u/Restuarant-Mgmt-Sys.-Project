@@ -1,0 +1,11 @@
+create database admin1;
+create database user;
+use  user;
+create table register(first varchar(20), last varchar(20), email1 varchar(30), phone varchar(50) , address varchar(30), password varchar(8));
+insert into register values('shikha','yadav','shikha@gmail.com',9560,'noida','shikha');
+select * from register;
+show tables;
+create table reservation(Id int NOT NULL AUTO_INCREMENT,Dates varchar(20),guests varchar(20),times varchar(20), first varchar(50), last varchar (50),email varchar(20),phone varchar(20),PRIMARY KEY(Id));
+select * from reservation;
+truncate reservation;
+Drop  table reservation;

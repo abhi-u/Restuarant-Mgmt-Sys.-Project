@@ -1,0 +1,140 @@
+<!Doctype html>
+<html>
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+</head>
+<style>
+
+ul {
+  list-style-type: none;
+  width: 62%;
+  margin-left: 20%;   
+  padding: 0;
+  overflow: hidden;
+  background-color: whitesmoke;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: brown;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+
+li a:hover:not(.active) {
+  background-color: grey;
+  border-bottom: 3px solid black;
+}
+
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  color: brown;;
+}
+
+.mySlides {
+    margin: 50px auto; 
+    position: relative; 
+    width: 60%; 
+    height: 60%; 
+    padding: 10px; 
+    }
+
+.slider {
+    position:absolute;
+    width: 2100px;
+    height: 80%;
+    top:22%;
+    left: 21.3%;
+}
+
+.table1 {
+    width:60%; 
+    text-align: center; 
+    position: absolute;
+    left:21%; 
+    top:76%; 
+    font-size: 250%;
+    color: brown;
+}
+
+.w3-tangerine {
+  font-family: "Tangerine", serif;
+}
+
+.table2 {
+    width:60%; 
+    text-align: center; 
+    position: absolute;
+    left:21%; 
+    top:85%; 
+    font-size: 80%;
+    color: brown;
+}
+</style>
+ 
+<body>
+<h1 class="w3-container w3-tangerine"><b>Welcome to Restaurant</b></h1>
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="Menu.html">Menu</a></li>
+  <li><a href="Reservation.html">Reservation</a></li>
+  <li><a href="Gallery.html">Gallery</a></li>
+  <li style="float:right"><a href="Admin.html">Admin</a></li>
+</ul>
+
+<div class="slider" style="max-width:800px; ">
+    <img class="mySlides" src="https://images.wallpaperscraft.com/image/restaurant_cafe_design_style_tables_chairs_39235_300x168.jpg" style="width:100%">
+    <img class="mySlides" src="https://images.wallpaperscraft.com/image/cafe_restaurant_table_interior_design_110567_300x188.jpg" style="width:100%">
+    <img class="mySlides" src="https://images.wallpaperscraft.com/image/desk_restaurant_wine_glasses_plates_flowers_roses_80713_300x188.jpg" style="width:100%">
+    <img class="mySlides" src="https://images.wallpaperscraft.com/image/restaurant_table_appliances_chairs_interior_39211_300x168.jpg" style="width:100%">
+</div>
+
+<script>
+ var slideIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none"; 
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1} 
+  x[slideIndex-1].style.display = "block"; 
+  setTimeout(carousel, 4000);
+}
+</script>
+
+<div class="w3-container w3-tangerine">
+<table class="table1">
+  <tr>
+    <th >Best Cuisine</th>
+    <th>Good Rest</th> 
+    <th>Great Service</th>
+    <th>Best Cooks</th>
+  </tr>
+</table>
+</div>
+<table class="table2">
+  <tr>
+    <td>The website template<br>have several pages:<br>Restaurant, Cuisine,<br>Wine List, Gallery,<br>Contact Us</td>
+    <td> Menu is perfect,<br>something for everyone.<br>Service is awesome.<br>You will be back<br>definitely!</td> 
+    <td>Serving with a smile.<br>Both take away and<br>dining availaibility.</td>
+    <td>Amazing cooks having<br>knowledge of 287<br>different Dishes.</td>
+  </tr>
+</table>
+</body>
+</html>

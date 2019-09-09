@@ -1,0 +1,114 @@
+<!Doctype html>
+<html>
+<head>
+    <title>AdminHome</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+</head>
+<style>
+
+ul {
+  list-style-type: none;
+  width: 62%;
+  margin-left: 20%;   
+  padding: 0;
+  overflow: hidden;
+  background-color: whitesmoke;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: brown;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+
+li a:hover:not(.active) {
+  background-color: grey;
+  border-bottom: 3px solid black;
+}
+
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  color: brown;;
+}
+
+.mySlides {
+    margin: 50px auto; 
+    position: relative; 
+    width: 60%; 
+    height: 60%; 
+    padding: 10px; 
+    }
+
+.slider {
+    position:absolute;
+    width: 2100px;
+    height: 80%;
+    top:22%;
+    left: 21.3%;
+}
+
+.w3-tangerine {
+  font-family: "Tangerine", serif;
+}
+
+.p1 {
+    position: absolute;
+    color:brown;
+    left:22%;
+    top:68%;
+    font-size: 70px;
+}
+</style>
+ 
+<body>
+<h1 class="w3-container w3-tangerine"><b>Welcome to Restaurant</b></h1>
+<ul>
+  <li><a href="AdminHome.html">Home</a></li>
+  <li><a href="AddItems.html">Add Items</a></li>
+  <li><a href="View_Booking.jsp">View Bookings</a></li>
+  <li><a href="Home.html" onclick="return logout()">Log Out</a></li>
+</ul>
+
+<div class="slider" style="max-width:800px; ">
+    <img class="mySlides" src="https://images.wallpaperscraft.com/image/restaurant_cafe_design_style_tables_chairs_39235_300x168.jpg" style="width:100%">
+    <img class="mySlides" src="https://images.wallpaperscraft.com/image/cafe_restaurant_table_interior_design_110567_300x188.jpg" style="width:100%">
+    <img class="mySlides" src="https://images.wallpaperscraft.com/image/desk_restaurant_wine_glasses_plates_flowers_roses_80713_300x188.jpg" style="width:100%">
+    <img class="mySlides" src="https://images.wallpaperscraft.com/image/restaurant_table_appliances_chairs_interior_39211_300x168.jpg" style="width:100%">
+</div>
+<script>
+ var slideIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none"; 
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1} 
+  x[slideIndex-1].style.display = "block"; 
+  setTimeout(carousel, 4000);
+}
+
+function logout()
+{
+    alert("Successfully Logged Out");
+    return true;
+}
+</script>
+<p class="p1 , w3-container w3-tangerine">Welcome Admin</p>
+</body>
+</html>
